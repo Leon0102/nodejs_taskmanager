@@ -14,7 +14,7 @@ app.use(morgan('combined'));
 
 
 // Middleware 
-app.use(express.static('public'));
+app.use(express.static('./public'));
 app.use(express.json());
 
 

@@ -10,7 +10,7 @@ require('dotenv').config()
 const app = express();
 const port = process.env.PORT || 3000;
 
-app.use(morgan('combined'));
+app.use(morgan('dev'));
 
 
 // Middleware 
@@ -31,7 +31,7 @@ const start = async (req, res) => {
   try {
     await connectDB(process.env.MONGO_URI);
     app.listen(port, () => {
-      console.log(`Server started on port ${port}`);
+      console.log(`Server started on http://localhost:${port}`);
     });
   } catch (error) {
     console.log(error);

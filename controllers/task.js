@@ -9,7 +9,8 @@ const getAllTasks = asyncWrapper (async (req, res, next) =>{
             count: tasks.length,
             tasks : tasks
         });
-});  
+});
+ 
 
 const createTask = asyncWrapper(async (req, res, next) =>{
      const task = await Task.create(req.body);
@@ -60,8 +61,7 @@ const updateTask = asyncWrapper(async (req, res, next) =>{
             // });
         }
         res.status(200).json({
-            success: true,
-            message: 'Task updated successfully'
+            task: task,
         });
 });
 const editTask = asyncWrapper(async (req, res, next) =>{
@@ -83,6 +83,7 @@ const editTask = asyncWrapper(async (req, res, next) =>{
             message: 'Task updated successfully'
         });
 });
+
 module.exports = { 
     getAllTasks,
     createTask,

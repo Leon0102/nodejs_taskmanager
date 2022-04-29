@@ -41,7 +41,6 @@ editFormDOM.addEventListener('submit', async (e) => {
       name: taskName,
       completed: taskCompleted,
     })
-
     const { _id: taskID, completed, name } = task
 
     taskIDDOM.textContent = taskID
